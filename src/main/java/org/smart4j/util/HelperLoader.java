@@ -3,7 +3,7 @@ package org.smart4j.util;
 /**
  * Create by Lee on 2017/12/12
  */
-public class HelperLoader {
+public final class HelperLoader {
 
 
     public static void init(){
@@ -11,6 +11,7 @@ public class HelperLoader {
         Class<?>[] classes = {
           ClassHelper.class,
           BeanHelper.class,
+          AopHelper.class,
           IocHelper.class,
           ControllerHelper.class
         };

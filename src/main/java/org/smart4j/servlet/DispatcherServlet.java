@@ -1,26 +1,23 @@
 package org.smart4j.servlet;
 
 import com.google.gson.Gson;
-import org.apache.commons.lang3.StringUtils;
+
 import org.smart4j.bean.Data;
 import org.smart4j.bean.Handler;
 import org.smart4j.bean.Param;
 import org.smart4j.bean.View;
-import org.smart4j.util.BeanHelper;
-import org.smart4j.util.ControllerHelper;
-import org.smart4j.util.ReflectionUtil;
+import org.smart4j.util.*;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
-import java.net.URLDecoder;
+
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +30,8 @@ public class DispatcherServlet extends HttpServlet{
 
     @Override
     public void init(ServletConfig config) throws ServletException {
+        HelperLoader.init();
+//        new IocHelper();测试
         super.init(config);
     }
 
@@ -102,7 +101,5 @@ public class DispatcherServlet extends HttpServlet{
             }
 
         }
-
-        super.service(req, resp);
     }
 }
