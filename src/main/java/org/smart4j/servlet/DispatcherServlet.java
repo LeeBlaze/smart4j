@@ -31,7 +31,7 @@ public class DispatcherServlet extends HttpServlet{
     @Override
     public void init(ServletConfig config) throws ServletException {
         HelperLoader.init();
-//        new IocHelper();测试
+        new AopHelper();
         super.init(config);
     }
 
